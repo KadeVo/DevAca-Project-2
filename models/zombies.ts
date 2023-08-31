@@ -1,7 +1,7 @@
 export interface Zombie {
   id: number
   species: string
-  power: string
-  speed: number
+  power: number
+  speed: string
   location: string
 }
