@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fruits</title>
-    <link rel="stylesheet" href="./client/styles/index.scss" />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="./client/index.tsx" type="module"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Fruits</title>
+  <link rel="stylesheet" href="./client/styles/index.scss" />
+</head>
+
+<body>
+  <div id="app">
+    <div id="header">
+      <h1>Take a bite!</h1>
+    </div>
+    <div class="container">
+      <div id="map">
+        <img src="./client/images/map.jpg" alt="Map Image">
+      </div>
+    </div>
+    <div class="zombieForm">
+      <form>
+        <h2 id="addZombieTitle">Add a Zombie</h2>
+        <label for="zombieName">Zombie Name:</label>
+        <input type="text" id="zombieName" name="zombieName" placeholder="Enter zombie name" required>
+
+        <label for="zombieType">Zombie Type:</label>
+        <select id="zombieType" name="zombieType" required>
+          <option value="">Select a type</option>
+          <option value="walker">Walker</option>
+          <option value="runner">Runner</option>
+          <option value="crawler">Crawler</option>
+        </select>
+
+        <label for="zombieDesc">Description:</label>
+        <textarea id="zombieDesc" name="zombieDesc" placeholder="Enter zombie description" required></textarea>
+
+        <div class="centerButton">
+          <button type="submit">Add Zombie</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <div class="logBtn">
+    <button>Sign In</button>
+  </div>
+  </div>
+</body>
+
 </html>
