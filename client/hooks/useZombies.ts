@@ -10,12 +10,12 @@ export function useZombies() {
   const query = useQuery(['zombies'], getZombies)
   return {
     ...query,
-    add: useAddZombie(),
-    delete: useDeleteZombie(),
+    // add: useAddZombie(),
+    // delete: useDeleteZombie(),
   }
 }
 
-export function useFruitsMutation<TData = unknown, TVariables = unknown>(
+export function useZombiesMutation<TData = unknown, TVariables = unknown>(
   mutationFn: MutationFunction<TData, TVariables>,
 ) {
   const queryClient = useQueryClient()
@@ -28,10 +28,10 @@ export function useFruitsMutation<TData = unknown, TVariables = unknown>(
   return mutation
 }
 
-function useAddZombie() {
-  return useCocktailsMutation(addZombie)
-}
+// function useAddZombie() {
+//   return useZombiesMutation(addZombie)
+// }
 
-function useDeleteZombie() {
-  return useCocktailsMutation(deleteZombie)
-}
+// function useDeleteZombie() {
+//   return useZombiesMutation(deleteZombie)
+// }
