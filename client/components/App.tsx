@@ -1,13 +1,11 @@
-import { useZombies } from '../hooks/useZombies.ts'
+import Zombies from './Zombies'
 
 function App() {
-  const { data } = useZombies()
-
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Zombies!</h1>
-        <ul>{data && data.map((zombie) => <li key={zombie}>{zombie}</li>)}</ul>
+        <h1>Zombies!</h1>
+        <Zombies />
       </div>
     </>
   )

@@ -10,7 +10,8 @@ export function useZombies() {
   const query = useQuery(['zombies'], getZombies)
   return {
     ...query,
-    // Extra queries go here e.g. addFruit: useAddFruit()
+    // add: useAddZombie(),
+    // delete: useDeleteZombie(),
   }
 }
 
@@ -27,7 +28,10 @@ export function useZombiesMutation<TData = unknown, TVariables = unknown>(
   return mutation
 }
 
-// Query functions go here e.g. useAddFruit
-/* function useAddFruit() {
-  return useFruitsMutation(addFruit)
-} */
+// function useAddZombie() {
+//   return useZombiesMutation(addZombie)
+// }
+
+// function useDeleteZombie() {
+//   return useZombiesMutation(deleteZombie)
+// }
