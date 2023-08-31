@@ -4,7 +4,8 @@ function App() {
   return (
     <>
       <div className="app">
-        <h1>Zombies!</h1>
+        <h1>Take a Bite!</h1>
+        <h2>Login to see where zombies are hiding!</h2>
         <Zombies />
       </div>
     </>

@@ -47,9 +47,9 @@ function AddZombie() {
     <>
       <h2>Add new Zombie</h2>
 
-      <form onSubmit={handleSubmit}>
-        <p>
-          <label htmlFor="name">Species:</label>
+      <form onSubmit={handleSubmit} className="zombieForm">
+        <div>
+          <label htmlFor="name">Name:</label>
           <br />
           <input
             id="name"
@@ -57,9 +57,7 @@ function AddZombie() {
             value={form.name}
             name="spenameies"
           />
-        </p>
 
-        <p>
           <label htmlFor="species">Species:</label>
           <br />
           <input
@@ -68,9 +66,9 @@ function AddZombie() {
             value={form.species}
             name="species"
           />
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label htmlFor="power">Power:</label>
           <br />
           <input
@@ -79,9 +77,7 @@ function AddZombie() {
             value={form.power}
             name="power"
           />
-        </p>
 
-        <p>
           <label htmlFor="speed">Speed:</label>
           <br />
           <input
@@ -90,9 +86,9 @@ function AddZombie() {
             value={form.speed === 0 ? '' : form.speed}
             name="speed"
           />
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label htmlFor="location">Location:</label>
           <br />
           <select
@@ -100,6 +96,7 @@ function AddZombie() {
             onChange={handleChange}
             value={form.location}
             name="location"
+            className="select-location"
           >
             {locationArray.map((location, index) => {
               return (
@@ -109,7 +106,7 @@ function AddZombie() {
               )
             })}
           </select>
-        </p>
+        </div>
 
         <button>Add Zombie</button>
       </form>
