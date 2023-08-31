@@ -1,0 +1,92 @@
+import { useState, FormEvent, ChangeEvent } from 'react'
+import { useZombies } from '../hooks/useZombies.ts'
+
+const initialFormData = {
+  species: '',
+  power: '',
+  speed: 0,
+  location: '',
+}
+
+function AddZombie() {
+  const [form, setForm] = useState(initialFormData)
+  const locationArray = [{ name: 'a' }, { name: 'b' }, { name: 'c' }]
+
+  const hook = useZombies()
+  const zombieAdd = hook.add
+
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
+    const { name, value } = event.target
+    const newForm = { ...form, [name]: value }
+    setForm(newForm)
+  }
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    zombieAdd.mutate(form)
+    setForm(initialFormData)
+  }
+
+  return (
+    <>
+      <h2>Add new Zombie</h2>
+
+      <form onSubmit={handleSubmit}>
+        <p>
+          <label htmlFor="species">Species:</label>
+          <br />
+          <input
+            id="species"
+            onChange={handleChange}
+            value={form.species}
+            name="species"
+          />
+        </p>
+
+        <p>
+          <label htmlFor="power">Power:</label>
+          <br />
+          <input
+            id="power"
+            onChange={handleChange}
+            value={form.power}
+            name="power"
+          />
+        </p>
+
+        <p>
+          <label htmlFor="speed">Speed:</label>
+          <br />
+          <input
+            id="speed"
+            onChange={handleChange}
+            value={form.speed === 0 ? '' : form.speed}
+            name="speed"
+          />
+        </p>
+
+        <p>
+          <label htmlFor="location">Location:</label>
+          <br />
+          <select
+            id="location"
+            onChange={handleChange}
+            value={form.speed === 0 ? '' : form.speed}
+            name="location"
+          />
+          {locationArray.map((location) => {
+            return (
+              <option key={location.name} value={location.name}>
+                {location.name}
+              </option>
+            )
+          })}
+        </p>
+
+        <button>Add Zombie</button>
+      </form>
+    </>
+  )
+}
+
+export default AddZombie
