@@ -2,6 +2,7 @@ import { useState, FormEvent, ChangeEvent } from 'react'
 import { useZombies } from '../hooks/useZombies.ts'
 
 const initialFormData = {
+  name: '',
   species: '',
   power: '',
   speed: 0,
@@ -10,7 +11,22 @@ const initialFormData = {
 
 function AddZombie() {
   const [form, setForm] = useState(initialFormData)
-  const locationArray = [{ name: 'a' }, { name: 'b' }, { name: 'c' }]
+  const locationArray = [
+    'Agape',
+    'AuKudo',
+    'Assassin Mountain',
+    'Boom Bay',
+    'Dire Gates',
+    'Loto',
+    'Market town',
+    'NergalStan',
+    'Nabuaga',
+    'Torn spleen',
+    'Old town',
+    'Purgus',
+    'Slaafur',
+    'StaintStand',
+  ]
 
   const hook = useZombies()
   const zombieAdd = hook.add
@@ -32,6 +48,17 @@ function AddZombie() {
       <h2>Add new Zombie</h2>
 
       <form onSubmit={handleSubmit}>
+        <p>
+          <label htmlFor="name">Species:</label>
+          <br />
+          <input
+            id="name"
+            onChange={handleChange}
+            value={form.name}
+            name="spenameies"
+          />
+        </p>
+
         <p>
           <label htmlFor="species">Species:</label>
           <br />
@@ -71,16 +98,17 @@ function AddZombie() {
           <select
             id="location"
             onChange={handleChange}
-            value={form.speed === 0 ? '' : form.speed}
+            value={form.location}
             name="location"
-          />
-          {locationArray.map((location) => {
-            return (
-              <option key={location.name} value={location.name}>
-                {location.name}
-              </option>
-            )
-          })}
+          >
+            {locationArray.map((location, index) => {
+              return (
+                <option key={index} value={location}>
+                  {location}
+                </option>
+              )
+            })}
+          </select>
         </p>
 
         <button>Add Zombie</button>
