@@ -6,8 +6,8 @@ import { addZombie as addNewZombie } from '../apis/zombies.ts'
 const initialFormData = {
   name: '',
   species: '',
-  power: '',
-  speed: 0,
+  power: 0,
+  speed: '',
   location: '',
 }
 
@@ -24,6 +24,7 @@ function AddZombie() {
     'NergalStan',
     'Nabuaga',
     'Torn spleen',
+    'crab campus',
     'Old town',
     'Purgus',
     'Slaafur',
@@ -74,6 +75,7 @@ function AddZombie() {
           <label htmlFor="power">Power:</label>
           <br />
           <input
+            type="number"
             id="power"
             onChange={handleChange}
             value={form.power}
@@ -83,7 +85,6 @@ function AddZombie() {
           <label htmlFor="speed">Speed:</label>
           <br />
           <input
-            type="number"
             id="speed"
             onChange={handleChange}
             value={form.speed}
