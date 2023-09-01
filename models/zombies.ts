@@ -1,5 +1,5 @@
 export interface Zombie {
-  id: number
+  id?: number
   name: string
   species: string
   power: number

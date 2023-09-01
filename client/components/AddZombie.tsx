@@ -1,6 +1,8 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
 import { useZombies } from '../hooks/useZombies.ts'
-
+import { addZombie as addNewZombie } from '../apis/zombies.ts'
+// npm run knex migrate:latest
+// npm run knex seed:run
 const initialFormData = {
   name: '',
   species: '',
@@ -39,7 +41,9 @@ function AddZombie() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+
     zombieAdd.mutate(form)
+    return addNewZombie(form)
     setForm(initialFormData)
   }
 
@@ -49,13 +53,13 @@ function AddZombie() {
 
       <form onSubmit={handleSubmit}>
         <p>
-          <label htmlFor="name">Species:</label>
+          <label htmlFor="name">Name:</label>
           <br />
           <input
             id="name"
             onChange={handleChange}
             value={form.name}
-            name="spenameies"
+            name="name"
           />
         </p>
 
