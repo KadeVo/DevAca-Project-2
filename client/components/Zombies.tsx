@@ -55,9 +55,9 @@ function Zombies() {
                 <button
                   onClick={() => {
                     onDeleteClicked(zombie.id)
-                  }} 
+                  }}
                 >
-                  Delete
+                  Eradicate
                 </button>
               </li>
             )

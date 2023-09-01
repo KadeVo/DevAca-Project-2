@@ -41,9 +41,7 @@ function AddZombie() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-
     zombieAdd.mutate(form)
-    return addNewZombie(form)
     setForm(initialFormData)
   }
 
@@ -51,10 +49,8 @@ function AddZombie() {
     <>
       <h2>Add new Zombie</h2>
 
-
       <form onSubmit={handleSubmit} className="zombieForm">
         <div>
-
           <label htmlFor="name">Name:</label>
           <br />
           <input
@@ -87,9 +83,10 @@ function AddZombie() {
           <label htmlFor="speed">Speed:</label>
           <br />
           <input
+            type="number"
             id="speed"
             onChange={handleChange}
-            value={form.speed === 0 ? '' : form.speed}
+            value={form.speed}
             name="speed"
           />
         </div>

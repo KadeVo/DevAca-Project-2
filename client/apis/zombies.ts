@@ -19,3 +19,15 @@ export function addZombie(zombie: Zombie): Promise<Zombie[]> {
       return res.body
     })
 }
+
+export function deleteZombie(id: number): Promise<Zombie[]> {
+  return request
+    .delete(`${rootUrl}/${id}`)
+
+    .then((res) => {
+      // validateNoSnakeCase()
+      // validatePostReponse()
+      console.log(res.body)
+      return res.body
+    })
+}

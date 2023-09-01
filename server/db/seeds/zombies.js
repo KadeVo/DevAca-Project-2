@@ -8,7 +8,7 @@ export async function seed(knex) {
       id: 1,
       name: 'Dormant DaviD',
       species: 'Infector',
-      power: 1,
+      power: 11,
       speed: 'slow',
       location: 'Purgus',
     },
@@ -18,7 +18,7 @@ export async function seed(knex) {
       species: 'Plagueclaw',
       power: 5,
       speed: 'fast',
-      location: 'loto',
+      location: 'Loto',
     },
     {
       id: 3,

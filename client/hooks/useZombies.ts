@@ -4,14 +4,14 @@ import {
   useQueryClient,
   MutationFunction,
 } from '@tanstack/react-query'
-import { getZombies, addZombie } from '../apis/zombies.ts'
+import { getZombies, addZombie, deleteZombie } from '../apis/zombies.ts'
 
 export function useZombies() {
   const query = useQuery(['zombies'], getZombies)
   return {
     ...query,
     add: useAddZombie(),
-    // delete: useDeleteZombie(),
+    delete: useDeleteZombie(),
   }
 }
 
@@ -32,6 +32,6 @@ function useAddZombie() {
   return useZombiesMutation(addZombie)
 }
 
-// function useDeleteZombie() {
-//   return useZombiesMutation(deleteZombie)
-// }
+function useDeleteZombie() {
+  return useZombiesMutation(deleteZombie)
+}
