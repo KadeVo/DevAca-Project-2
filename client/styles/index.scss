@@ -1,7 +1,7 @@
 // Formatting page
 body {
   margin: 0;
-  padding: 0;
+  padding: 50px;
   background-color: #1a1a1a;
   color: #fff;
   font-family: Arial, sans-serif;
@@ -20,19 +20,32 @@ body::before {
 }
 
 #app {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-#header {
+
+
+h1 {
+  margin: 0;
+  font-size: 5rem;
   text-align: center;
   padding: 20px 0;
 }
 
-h1 {
+h2 {
   margin: 0;
   font-size: 2.5rem;
+  text-align: center;
+  color:#cc0000;
+  padding: 20px 0;
+}
+
+.list-img-container {
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+
 }
 
 .container {
@@ -40,7 +53,7 @@ h1 {
   margin: 20px 0;
 }
 
-#map img {
+.map-img {
   max-width: 100%;
   border: 1px solid #666;
 }
@@ -72,17 +85,21 @@ button {
   margin-top: 20px;
   padding: 20px;
   background-color: #333;
+  width:600px;
+  margin-left:auto;
+  margin-right:auto;
+
 }
 
 .zombieForm h2 {
   color: #cc0000;
-  margin-bottom: 10px;
 }
 
 .zombieForm label {
   display: block;
-  margin-top: 10px;
+  margin-top: 20px;
   color: #fff;
+  margin-right:10px
 }
 
 .zombieForm input,
@@ -90,17 +107,34 @@ button {
 .zombieForm textarea {
   width: 100%;
   padding: 8px;
-  margin-top: 4px;
+  margin-top: 20px;
+  margin-right:10px;
   border: 1px solid #666;
   background-color: #1a1a1a;
   color: #fff;
+}
+
+.zombieForm button{
+  margin-left:450px;
+  margin-right:auto;
+  margin-top:20px;
+}
+
+//  {
+//   width: 50%;
+//   padding: 8px;
+//   border: 1px solid #666;
+//   background-color: #1a1a1a;
+//   color: #fff;
+// }
+
+
+.zombieForm div {
+  display:flex
 }
 
 .zombieForm textarea {
   resize: vertical;
 }
 
-.centerButton {
-  text-align: center;
-  margin-top: 20px;
-}
+
